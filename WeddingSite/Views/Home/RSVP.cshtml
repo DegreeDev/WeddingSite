@@ -1,0 +1,67 @@
+﻿@{
+	ViewBag.Title = "RSVP";
+	ViewBag.Active = "rsvp";
+}
+<div class="row">
+	<div class="rsvp col-lg-6 col-sm-12 col-md-6 col-lg-offset-3 col-md-offset-3 hidden">
+		<form class="form-horizontal " role="form">
+			<h3>Will you be joining us?</h3>
+			<div class="form-group">
+				<div class="radio">
+					<label class="">
+						<input type="radio" name="rvsp" value="yes" data-bind="checked: rsvp, checkedValue: 'yes'" />
+						Yes. We would love to join for your special day.
+					</label>
+				</div>
+				<div class="radio">
+					<label class="">
+						<input type="radio" name="rvsp" value="no`" data-bind="checked: rsvp, checkedValue: 'no'" />
+						No. We hate fun.
+					</label>
+				</div>
+			</div>
+			<div data-bind="visible: isNo">
+				<button type="submit" class="btn btn-primary">Boooooooo!</button>
+			</div>
+			<div data-bind="visible: isYes">
+				<div class="form-group">
+					<label for="name">Your Name</label>
+					<input class="form-control" type="text" name="name" />
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" data-bind="checked: alone" />
+						Are you alone in life?
+					</label>
+				</div>
+				<div class="form-group" data-bind="visible: !alone()">
+					<label>Who will you be bringing?</label>
+					<input class="form-control" type="text" name="guest" />
+				</div>
+				<button type="submit" class="btn btn-primary">See you there!</button>
+			</div>
+		</form>
+	</div>
+</div>
+@section Scripts {
+	<script src="~/Scripts/knockout-3.2.0.js"></script>
+	<script>
+		function VM() {
+			var self = this;
+
+			self.rsvp = ko.observable();
+
+			self.isNo = ko.computed(function () {
+				return self.rsvp() == "no";
+			});
+			self.isYes = ko.computed(function () {
+				return self.rsvp() == "yes";
+			});
+
+			self.alone = ko.observable(false);
+		}
+
+		ko.applyBindings(new VM());
+		$(".hidden").removeClass("hidden");
+	</script>
+}
