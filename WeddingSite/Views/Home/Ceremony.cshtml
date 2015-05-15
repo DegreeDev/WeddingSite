@@ -1,23 +1,37 @@
 ﻿@{
 	ViewBag.Title = "Ceremony";
 }
-
-<p>
-	The ceremony will be held at Greenhouse Lofts located at <a href="http://goo.gl/maps/CkXM7" target="_blank">2545 West Diversey Avenue, Chicago, IL</a>. Please arrive around 4pm as the ceremony will start at 4:30.
-</p>
+<div class="ceremony">
+	<h4>Ceremony</h4>
+	<p>
+		<a href="http://goo.gl/maps/CkXM7" target="_blank">
+			Greenhouse Loft,
+			2nd Floor of Green Exchange,
+			2545 W Diversey Ave
+			Chicago, IL 60647
+		</a>
+	</p>
+	<p>
+		The ceremony will begin promptly at <span class="text-info">6:00 pm</span> and will last approximately 30 minutes. The reception will immediately follow the ceremony.
+	</p>
+	<p>
+		A formal invitation will be sent out prior to the wedding.
+	</p>
+	<h4>
+		Transportation
+	</h4>
+	<ul class="list-unstyled directions">
+		<li><i class="mdi-maps-directions-car"></i> Car: Exit the Kennedy Expressway (I-90/94) at Exit 46B Diversey Ave. Head east to the Green Exchange. Street parking is available on Diversey Ave.</li>
+		<li><i class="mdi-maps-local-taxi"></i> Taxi: Raise hand in the air to flag a taxi. Give address to the driver and relax!</li>
+		<li><i class="mdi-maps-directions-transit"></i> Public Transit: The 76 bus (Diversey Ave) stops the closest at the Diversey & Rockwell.  Or take the 49 bus (Western Ave) to Western & Elston/Diversey.</li>
+		<li><i class="mdi-maps-directions-bus"></i> Shuttle: Please check with the hotel if a shuttle has been arranged for guests</li>
+	</ul>
+</div>
 <div class="row">
 	<div class="col-lg-6 col-lg-offset-3, col-md-6 col-md-offset-3">
 		<div class="center" id="map-canvas"></div>
 	</div>
 </div>
-@section Styles {
-	<style>
-		#map-canvas {
-			width: 500px;
-			height: 400px;
-		}
-	</style>
-}
 @section Scripts {
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
 	<script>

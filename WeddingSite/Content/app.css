@@ -1,69 +1,185 @@
-﻿body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
+﻿img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
-body #footer {
+p {
+  -ms-word-break: keep-all;
+  word-break: keep-all;
+  text-align: justify;
+}
+p + p {
+  margin-bottom: 28px;
+}
+.media div.media-heading h4 {
+  display: inline-block;
+  float: left;
+}
+.media div.media-heading h5 {
+  display: inline-block;
+  float: right;
+}
+.media div.media-heading:after {
+  clear: both;
+}
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  height: 100%;
+  background-image: url(../Content/images/hands.jpg);
+  background-size: 1500px;
+  background-position-x: left;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+.landing-page {
+  background-image: url(../Content/images/city.jpg);
+  background-size: 1500px;
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+.content {
+  margin-top: 200px;
+  opacity: .85;
+  height: 100%;
+}
+.content h4 {
+  text-transform: uppercase;
+}
+.content img.content {
+  width: 100%;
+}
+.content ul.directions li i:before {
+  font-size: 1.5em;
+}
+.guests h4,
+.ceremony h4 {
+  margin-bottom: 5px;
+}
+.guests h5,
+.ceremony h5 {
+  margin-bottom: 5px;
+}
+.guests p,
+.ceremony p {
+  margin-bottom: 20px;
+}
+#footer {
   position: absolute;
   bottom: 10px;
   width: 100%;
   text-align: center;
   color: #333333;
 }
-body h1,
-body h2 {
-  font-family: 'Century Gothic';
+.gallery img {
+  width: 200px;
 }
-body p {
-  margin-bottom: 28px;
-}
-header .center {
-  width: 100%;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-header .navbar {
-  border-radius: 0;
-}
-header .navbar-default {
-  background-color: #0d1a56;
-  font-family: 'Century Gothic';
-  padding-bottom: 10px;
-}
-header .navbar-default a.navbar-brand {
-  font-size: 2em;
-  opacity: .66;
-}
-header .navbar-default a.navbar-brand:after {
-  content: '05.28.2016';
+.landing {
   position: absolute;
-  font-size: .58em;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
 }
-header .navbar-default .nav li {
-  padding-top: 10px;
+.landing .landing-panel {
+  position: relative;
 }
-header .navbar-default .nav li a {
+.landing .landing-panel a {
   text-transform: uppercase;
-  color: #ffffff;
+  font-size: 15.4px;
+  padding-right: 10px;
 }
-header .navbar-default .nav li a:hover {
-  color: #ffffff;
-}
-header .navbar-default .nav li a.active {
-  opacity: .9;
-}
-.body {
-  width: 100%;
-  height: 100%;
-  font-size: 14px;
-}
-.body .card {
-  border: 1px solid #000000;
-  background-color: white;
-  border-radius: 2px;
-  padding: 0 10px 0 10px;
-}
-.body .card h3 {
+.landing .landing-panel .names-panel {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  text-transform: uppercase;
+  width: 100%;
+}
+.landing .landing-panel .names-panel h1 {
+  font-size: 4em;
+  color: #ffffff;
+  text-transform: lowercase;
+}
+.landing .landing-panel .names-panel h4 {
+  color: #00796B;
+  text-transform: lowercase;
+}
+.body .panel-body {
+  min-height: 250px;
+}
+.mobile {
+  display: none;
+}
+#map-canvas {
+  width: 500px;
+  height: 400px;
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .background,
+  .landing-page {
+    background-image: url('images/gallery/IMG_4207.jpg');
+    background-size: auto;
+    background-color: #333;
+    width: 100%;
+  }
+  #map-canvas {
+    width: 250px;
+    height: 300px;
+  }
+  .content {
+    margin-top: 0;
+  }
+  .landing {
+    position: relative;
+  }
+  .landing .landing-panel a,
+  .landing .landing-panel button {
+    font-size: 1.5em;
+  }
+  .landing .landing-panel .names-panel {
+    display: inline-block;
+    position: static;
+    transform: none;
+  }
+  .landing .landing-panel .names-panel h1 {
+    color: #00796B;
+  }
+  .landing .landing-panel > a {
+    display: none;
+  }
+  .landing .landing-panel .mobile {
+    display: block;
+  }
+  .landing .landing-panel .mobile:first-child {
+    float: left;
+  }
+  .landing .landing-panel .mobile button:last-of-type {
+    float: right;
+  }
+  .landing .landing-panel .mobile .mobile-nav {
+    height: 0;
+    visibility: hidden;
+    transition: height 1s linear;
+  }
+  .landing .landing-panel .mobile .mobile-nav.active {
+    background: #eee;
+    opacity: 0.8;
+    width: 100%;
+    padding: 15px;
+    visibility: visible;
+    height: auto;
+  }
+  .landing .landing-panel .mobile .mobile-nav a {
+    display: block;
+  }
 }
 /*# sourceMappingURL=app.css.map */

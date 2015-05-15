@@ -7,18 +7,17 @@
 		<form class="form-horizontal " role="form">
 			<h3>Will you be joining us?</h3>
 			<div class="form-group">
-				<div class="radio">
-					<label class="">
-						<input type="radio" name="rvsp" value="yes" data-bind="checked: rsvp, checkedValue: 'yes'" />
-						Yes. We would love to join for your special day.
-					</label>
-				</div>
-				<div class="radio">
-					<label class="">
-						<input type="radio" name="rvsp" value="no`" data-bind="checked: rsvp, checkedValue: 'no'" />
-						No. We hate fun.
-					</label>
-				</div>
+
+				<label class="radio radio-primary">
+					<input type="radio" name="rvsp" value="yes" data-bind="checked: rsvp, checkedValue: 'yes'" />
+					Yes. We would love to join for your special day.
+				</label>
+
+				<label class="radio radio-primary">
+					<input type="radio" name="rvsp" value="no`" data-bind="checked: rsvp, checkedValue: 'no'" />
+					No. We hate fun.
+				</label>
+
 			</div>
 			<div data-bind="visible: isNo">
 				<button type="submit" class="btn btn-primary">Boooooooo!</button>

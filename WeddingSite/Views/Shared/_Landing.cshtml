@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>M + N 2016</title>
+	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<meta name="viewport" content="width=device-width" />
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+	<link href="~/Content/bootstrap.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/material-wfont.css" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.2.1/css/ripples.css" rel="stylesheet" />
+	@RenderSection("styles", required: false)
+</head>
+<body class="landing-page">
+
+	@{Html.RenderPartial("_Navigation");}
+
+	@RenderBody()
+	@Scripts.Render("~/bundles/jquery")
+	@RenderSection("scripts", required: false)
+	<script>
+		(function () {
+			$("#mobile-more").on('click', function () {
+				console.log("clicked more");
+				$(".mobile-nav").toggleClass("active");
+			});
+
+		})();
+	</script>
+</body>
+</html>

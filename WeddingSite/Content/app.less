@@ -11,89 +11,243 @@
 	font-size: @font-size;
 }
 
-body {
-	.reset-font();
+img {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
 
-	#footer {
-		position: absolute;
-		bottom: 10px;
-		width: 100%;
-		text-align: center;
-		color: @color-gray-dark;
+p {
+	-ms-word-break: keep-all;
+	word-break: keep-all;
+	text-align: justify;
+}
+
+p + p {
+	margin-bottom: 2 * @font-size;
+}
+
+.media {
+	div.media-heading {
+		h4{
+			display:inline-block;
+			float:left;
+		}
+		h5 {
+			display:inline-block;
+			float:right;
+
+		}
+		&:after{
+			clear:both;
+		}
+	}
+}
+
+.background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 0;
+	height: 100%;
+	background-image: url(../Content/images/hands.jpg);
+	background-size: 1500px;
+	background-position-x: left;
+	background-position-y: top;
+	background-repeat: no-repeat;
+	background-color: #fff;
+}
+
+
+
+
+&.landing-page {
+	background-image: url(../Content/images/city.jpg);
+	background-size: 1500px;
+	background-position-x: center;
+	background-position-y: top;
+	background-repeat: no-repeat;
+	background-color: #fff;
+}
+
+.content {
+	margin-top: 200px;
+	opacity: .85;
+	height: 100%;
+
+
+	h4 {
+		text-transform: uppercase;
 	}
 
-	h1, h2 { 
-		font-family: @font-header;
+	img.content {
+		width: 100%;
+	}
+
+	ul.directions {
+		li i:before {
+			font-size: 1.5em;
+		}
+	}
+}
+
+.guests, .ceremony {
+	h4 {
+		margin-bottom: 5px;
+	}
+
+	h5 {
+		margin-bottom: 5px;
 	}
 
 	p {
-		margin-bottom: 2 * @font-size;
+		margin-bottom: 20px;
 	}
+}
 
+#footer {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+	color: @color-gray-dark;
+}
+
+.gallery {
+	img {
+		width: 200px;
+	}
+}
+
+.landing {
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+
+	.landing-panel {
+		position: relative;
+
+		a {
+			text-transform: uppercase;
+			font-size: @font-size * 1.1;
+			padding-right: 10px;
+		}
+
+		.names-panel {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			text-align: center;
+			width: 100%;
+
+			h1 {
+				font-size: 4em;
+				color: #ffffff;
+				text-transform: lowercase;
+			}
+
+			h4 {
+				color: #00796B;
+				text-transform: lowercase;
+			}
+		}
+	}
 }
 
 
-header {
-	.center {
-		width: 100%; 
-		margin-left:10%;
-		margin-right: 10%;
+.body {
+
+	.panel-body {
+		min-height: 250px;
+	}
+}
+
+.mobile {
+	display: none;
+}
+
+
+#map-canvas {
+	width: 500px;
+	height: 400px
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+	.background, .landing-page {
+		background-image: url('images/gallery/IMG_4207.jpg');
+		background-size: auto;
+		background-color: #333;
+		width: 100%;
 	}
 
-	.navbar {
-		border-radius: 0;
+	#map-canvas {
+		width: 250px;
+		height: 300px;
 	}
 
-	.navbar-default {
-		background-color: #0d1a56; //#ffcf48;
-		font-family: @font-header;
-		padding-bottom: 10px;
+	.content {
+		margin-top: 0;
+	}
 
-		a.navbar-brand {
-			font-size: 2em;
-			opacity:.66;
-			&:after {
-				content: '05.28.2016';
-				position: absolute;
-				font-size: .58em;
+	.landing {
+		position: relative;
+
+		.landing-panel {
+			a, button {
+				font-size: 1.5em;
 			}
-		}
 
-		.nav {
-			li {
-				padding-top: 10px;
+			.names-panel {
+				display: inline-block;
+				position: static;
+				transform: none;
 
-				a {
-					text-transform: uppercase;
-					color: #ffffff;
+				h1 {
+					color: #00796B;
+				}
+			}
 
-					&:hover {
-						color: #ffffff;
-					}
+
+			& > a {
+				display: none;
+			}
+
+			.mobile {
+				display: block;
+
+				&:first-child {
+					float: left;
+				}
+
+				button:last-of-type {
+					float: right;
+				}
+
+				.mobile-nav {
+					height: 0;
+					visibility: hidden;
+					transition: height 1s linear;
 
 					&.active {
-						opacity: .9;
+						background: #eee;
+						opacity: 0.8;
+						width: 100%;
+						padding: 15px;
+						visibility: visible;
+						height: auto;
+					}
+
+					a {
+						display: block;
 					}
 				}
 			}
-		}
-	}
-}
-
-.body {
-	width: 100%;
-	height: 100%;
-	font-size: 14px;
-
-	.card {
-		border: 1px solid darken(#0d1a56, 30%);
-		background-color: white;
-		border-radius: 2px;
-		padding: 0 10px 0 10px;
-
-		h3 {
-			text-align: center;
-			text-transform: uppercase;
 		}
 	}
 }

@@ -1,0 +1,39 @@
+﻿<div class="landing">
+	<div class="landing-panel">
+
+		@LinksWithHome()
+
+		<div class="mobile">
+			@Html.ActionLink("M+N", "Index", "Home", null, new { @class = "btn btn-link" })
+			<button id="mobile-more" class="btn btn-link">More</button>
+			<div class="clearfix"></div>
+			<div class="mobile-nav">
+				@Links()
+			</div>
+		</div>
+
+		<div class="names-panel">
+			<h1>Matthew + Natalya</h1>
+			<h4>05.28.2016</h4>
+			<h4>chicago</h4>
+		</div>
+	</div>
+</div>
+
+
+@helper Links()
+{
+	
+	@Html.ActionLink("Us", "Us", "Home")
+	@Html.ActionLink("Proposal", "Proposal", "Home")
+	@Html.ActionLink("Ceremony", "Ceremony", "Home")
+	@Html.ActionLink("Reception", "Reception", "Home")
+	@Html.ActionLink("Photos", "Photos", "Home")
+	@Html.ActionLink("Party", "Party", "Home")
+	@Html.ActionLink("Guests", "Guests", "Home")
+}
+
+@helper LinksWithHome() { 
+	@Html.ActionLink("M+N", "Index", "Home")
+	@Links()
+}

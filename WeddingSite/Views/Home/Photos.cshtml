@@ -1,6 +1,26 @@
-﻿@{
+﻿@model List<string>
+@{
     ViewBag.Title = "Photos";
+	 
 }
+@section scripts {
+	<script type="text/javascript" src="@Url.Content("~/scripts/jquery.fancybox.pack.js")"></script>
+	<script>
+		$(function () {
+			$("a.gallery-image").fancybox();
 
-<h2>Photos</h2>
-
+		});
+	</script>
+}
+@section styles {
+	<link rel="stylesheet" href="@Url.Content("~/content/jquery.fancybox.css")" type="text/css" media="screen" />
+}
+<div class="gallery">
+	@foreach (var photo in Model)
+	{
+		var url = @Url.Content("~/content/images/gallery/" + photo);
+		<a href="@url" class="gallery-image" rel="group">
+			<img src="@url" />
+		</a>
+	}
+</div>
