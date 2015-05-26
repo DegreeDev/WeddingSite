@@ -276,6 +276,13 @@
     <Content Include="Content\images\gallery\IMG_4207.jpg" />
     <Content Include="Content\images\gallery\IMG_4217.jpg" />
     <Content Include="Content\images\lpzh.jpg" />
+    <Content Include="Content\images\profiles\andy.jpg" />
+    <Content Include="Content\images\profiles\eric.jpg" />
+    <Content Include="Content\images\profiles\j.jpg" />
+    <Content Include="Content\images\profiles\jenna.png" />
+    <Content Include="Content\images\profiles\kelsey.jpg" />
+    <Content Include="Content\images\profiles\max.PNG" />
+    <Content Include="Content\images\profiles\rook.PNG" />
     <Content Include="Content\images\trump.jpg" />
     <Content Include="Content\images\us-trump.jpg" />
     <Content Include="Content\images\hands.jpg" />
