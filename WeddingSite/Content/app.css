@@ -38,15 +38,17 @@ p + p {
   height: 100%;
   background-image: url(../Content/images/hands.jpg);
   background-size: 1500px;
-  background-position-x: left;
+  background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;
   background-color: #fff;
+  background-attachment: fixed !important;
+  background-size: cover !important;
 }
 .landing-page {
   background-image: url(../Content/images/city.jpg);
   background-size: 1500px;
-  background-position-x: center;
+  background-position-x: -30px;
   background-position-y: top;
   background-repeat: no-repeat;
   background-color: #fff;
