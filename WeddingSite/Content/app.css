@@ -60,9 +60,11 @@ p + p {
 }
 .content h4 {
   text-transform: uppercase;
+  opacity: 1;
 }
 .content img.content {
   width: 100%;
+  margin-top: 0;
 }
 .content ul.directions li i:before {
   font-size: 1.5em;
