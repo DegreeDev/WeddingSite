@@ -16,6 +16,7 @@ img {
 	-khtml-user-select: none;
 	-moz-user-select: none;
 	-o-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 }
 
@@ -31,7 +32,7 @@ p + p {
 
 .media {
 	img {
-		height: 64;; 
+		height: 64px; 
 		width: 64px;
 	}
 	div.media-heading {
@@ -130,6 +131,10 @@ p + p {
 	position: absolute;
 	top: 30px;
 	left: 50%;
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
 
 	.landing-panel {
@@ -138,13 +143,16 @@ p + p {
 		a {
 			text-transform: uppercase;
 			font-size: @font-size * 1.1;
-
 			padding: 6px 12px;
 		}
 
 		.names-panel {
 			position: absolute;
 			left: 50%;
+			-moz-transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+			-o-transform: translateX(-50%);
+			-webkit-transform: translateX(-50%);
 			transform: translateX(-50%);
 			text-align: center;
 			width: 100%;
@@ -211,6 +219,10 @@ p + p {
 			.names-panel {
 				display: inline-block;
 				position: static;
+				-moz-transform: none;
+				-ms-transform: none;
+				-o-transform: none;
+				-webkit-transform: none;
 				transform: none;
 
 				h1 {
@@ -237,6 +249,9 @@ p + p {
 				.mobile-nav {
 					height: 0;
 					visibility: hidden;
+					-moz-transition: height 1s linear;
+					-o-transition: height 1s linear;
+					-webkit-transition: height 1s linear;
 					transition: height 1s linear;
 
 					&.active {
