@@ -148,7 +148,7 @@ p + p {
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   body {
-    font-size: 3em!important;
+    font-size: 20px!important;
   }
   .background,
   .landing-page {
